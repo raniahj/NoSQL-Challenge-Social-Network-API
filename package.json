@@ -1,17 +1,27 @@
 {
-    "name": "18-nosql",
-    "version": "1.0.0",
-    "private": true,
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.17.1",
-        "mongoose": "^6.2.4"
-    }
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "module 18 NoSQL challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Raniah Jeanlys",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^6.2.4",
+    "package.json": "^2.0.1",
+    "routes": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raniahj/NoSQL-Challenge-Social-Network-API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raniahj/NoSQL-Challenge-Social-Network-API/issues"
+  },
+  "homepage": "https://github.com/raniahj/NoSQL-Challenge-Social-Network-API#readme"
 }
