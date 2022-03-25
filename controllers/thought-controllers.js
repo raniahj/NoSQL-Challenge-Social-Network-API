@@ -13,6 +13,7 @@ const thoughtController = {
 
 // get one thought by id
 getThoughtById({ params }, res) {
+  console.log(params)
     Thought.findOne({_id: params.id })
     .then(dbThoughtData => {
       // If no thought is found, send 404
@@ -27,10 +28,24 @@ getThoughtById({ params }, res) {
       res.status(400).json(err);
     });
 },
+
+
+
 // create thought
-createThought({ body }, res) {
-    Thought.create(body)
-      .then(dbThoughtData => res.json(dbThoughtData))
+createThought({ params, body }, res) {
+  console.log(body)
+    Thought.create({  
+      thoughtText: body.thoughtText,
+      userName: body.userName,
+      userId: params.userId })
+      .then(({ _id }) => {
+        return User.findOneAndUpdate(
+            { _id: params.userId },
+            { $addToSet: { thoughts: _id } },
+            { new: true }
+        );
+        })
+      .then(dbUserData => res.json(dbUserData))
       .catch(err => res.status(400).json(err));
   },
 // update thought by id
